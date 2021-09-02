@@ -23,8 +23,8 @@ server.post('/api/login', (req, res) => {
 
 })
 
-server.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client/build', 'index.html'))
+server.get('/', (req, res) => {
+    res.send(`<h1>Hello!</h1>`)
   })
 
 server.listen(PORT, () => {
