@@ -10,16 +10,16 @@ server.use(express.json());
 server.use(cors());
 
 server.get('/api/users', (req, res) => {
- console.log('Get Users')
+    res.json({ message: 'Get Users' })
 })
 
 server.post('/api/register', (req, res) => {
-    console.log('Register')
+    res.json({ message: 'Register' })
 
 })
 
 server.post('/api/login', (req, res) => {
-    console.log('Login')
+    res.json({ message: 'Login' })
 
 })
 
