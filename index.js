@@ -1,32 +1,32 @@
 require('dotenv').config();
-const path = require('path');
 const express = require('express');
 const cors = require('cors');
 
-const PORT = process.env.port || 5000
+const PORT = process.env.PORT || 5000 // fallback is nice
 
-const server = express();
-server.use(express.json());
-server.use(cors());
+const server = express()
 
-server.get('/api/users', (req, res) => {
-    res.json({ message: 'Get Users' })
-})
+server.use(express.json())
+server.use(cors())
 
-server.post('/api/register', (req, res) => {
-    res.json({ message: 'Register' })
+// server.get('/api/users', (req, res) => {
+//     res.json({ message: 'Get Users' })
+// })
 
-})
+// server.post('/api/register', (req, res) => {
+//     res.json({ message: 'Register' })
 
-server.post('/api/login', (req, res) => {
-    res.json({ message: 'Login' })
+// })
 
-})
+// server.post('/api/login', (req, res) => {
+//     res.json({ message: 'Login' })
+
+// })
 
 server.get('/', (req, res) => {
     res.send(`<h1>Hello!</h1>`)
   })
 
 server.listen(PORT, () => {
-    console.log(`\n *Listening on ${PORT}* \n`);
+    console.log(`*Listening on ${PORT}*`);
 })
